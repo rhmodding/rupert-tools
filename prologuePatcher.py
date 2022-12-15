@@ -1,4 +1,4 @@
-#Developped by patataofcourse
+#Developed by patataofcourse
 #Revised by TheAlternateDoctor
 import argparse
 

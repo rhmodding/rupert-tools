@@ -1,4 +1,4 @@
-#Developped by TheAlternateDoctor
+#Developed by TheAlternateDoctor
 #With help from patataofcourse, Cebola
 import argparse
 from pathlib import Path

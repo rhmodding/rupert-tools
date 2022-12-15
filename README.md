@@ -2,7 +2,9 @@
 
 This repository contains multiple tools made to help the Megamix modder to make, or merge, mods.
 
-These tools were made with the help of [patataofcourse](https://github.com/patataofcourse/) and [Cebola](https://github.com/CebolaBros64)!
+These tools were made with the help of [TheAlternateDoctor](https://github.com/TheAlternateDoctor), [patataofcourse](https://github.com/patataofcourse/), qand [Cebola](https://github.com/CebolaBros64)!
+
+This project is public domain under the terms of The Unlicense. You can find a copy at [LICENCE.md](./LICENCE.md).
 
 ## Table of contents
 1. [Console Patcher](#consolepatcherpy)
