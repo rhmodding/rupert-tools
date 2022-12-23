@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser("group.py",
 parser.add_argument("group", help="Any music group. Sick Beat's gate group recommended")
 parser.add_argument("index", help="SFX index to point to")
 
-startingPoint = [0x69, 0x3d0, 0x2f]
+startingPoint = [0x69, 0x3d0, 0x12f]
 startIndex = 0x1000101
 
 args = parser.parse_args()
@@ -39,12 +39,12 @@ if __name__ == '__main__':
                 #Writing 0x5C!
                 group.seek(0)
                 group.seek(0x5c)
-                group.write((startingPoint[0]+offset).to_bytes(32, byteorder='little',signed=False))
+                group.write((startingPoint[0]+offset).to_bytes(4, byteorder='little',signed=False))
                 #Writing 0x6C!
                 group.seek(0)
                 group.seek(0x6c)
-                group.write((startingPoint[1]+offset).to_bytes(32, byteorder='little',signed=False))
+                group.write((startingPoint[1]+offset).to_bytes(4, byteorder='little',signed=False))
                 #Writing 0xDC!
                 group.seek(0)
                 group.seek(0xdc)
-                group.write((startingPoint[2]+offset).to_bytes(32, byteorder='little',signed=False))
+                group.write((startingPoint[2]+offset).to_bytes(2, byteorder='little',signed=False))
