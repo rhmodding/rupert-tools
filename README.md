@@ -47,25 +47,27 @@ consolePatcher.py base.bin 5E 0 -o newbase.bin
 
 ## group.py
 
-This tool allows the modmaker to modify a bcgrp's id to another one.
+This tool allows the modmaker to create a new bcgrp pointing to another id.
 
 ### Usage
 ```
-usage: group.py [-h] group index
+usage: group.py [-h] [-o OUTPUT] group index
 
-Change a music group's index
+Create a group with the specified group ID
 
 positional arguments:
-  group       Any music group. Sick Beat's gate group recommended
-  index       SFX index to point to
+  group                 Any music group. Sick Beat's gate group recommended
+  index                 SFX index to point to
 
 options:
-  -h, --help  show this help message and exit
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+
 ```
 
 #### Examples
 
-Change the id of Big Rock Finish A to Spaceball's
+Create GROUP_WSD_NEW.bcgrp pointing to Spaceball's id from Big Rock Finish A's group.
 ```
 group.py GROUP_WSD_NTR_SHORT_LIVE_A.bcgrp 0x1000192
 ```
