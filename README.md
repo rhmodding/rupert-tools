@@ -4,13 +4,14 @@ This repository contains multiple tools made to help the Megamix modder to make,
 
 These tools were made with the help of [TheAlternateDoctor](https://github.com/TheAlternateDoctor), [patataofcourse](https://github.com/patataofcourse/), qand [Cebola](https://github.com/CebolaBros64)!
 
-This project is public domain under the terms of The Unlicense. You can find a copy at [LICENCE.md](./LICENCE.md).
+This project is public domain under the terms of The Unlicense. You can find a copy at [LICENCE.md](./LICENCE.md). sarc3.py also requires attribution to the original creator, ObsidianX.
 
 ## Table of contents
 1. [Console Patcher](#consolepatcherpy)
 2. [Group Maker](#grouppy)
 3. [Prologue Patcher](#prologuepatcherpy)
 4. [MSBT Diff Tool](#xmsbtdiffpy)
+5. [SARC/ZLIB Archive Tool](#sarc3py)
 
 ## consolePatcher.py
 
@@ -137,3 +138,50 @@ diff.py base edited
 ```
 This matches all input files with edited files of the same name.
 This also creates a "out" folder containing the diffs of non-matching files.
+
+## sarc3.py
+
+This tool allows a modmaker to unpack and extract SARC files, including ZLIB-compressed SARCs such as those used in Megamix.
+
+This is a modified version of ObsidianX's sarc.py, which can be found at https://github.com/ObsidianX/3dstools
+
+### Usage
+
+```
+usage: sarc3.py [-h] [-v] [-d] [-y] [-z] [--compression-level LEVEL] (-x | -c | -t)
+                [-l | -b] -f ARCHIVE [-D DIRECTORY]
+                [file ...]
+
+SARC Archive Tool
+
+positional arguments:
+  file                  files to add to an archive
+
+options:
+  -h, --help            show this help message and exit
+  -v, --verbose         print more data when working
+  -d, --debug           print debug information
+  -y, --yes             answer "yes" to questions (overwriting files)
+  -z, --zlib            use ZLIB to compress or decompress the archive
+  --compression-level LEVEL
+                        ZLIB compression level (default: 6)
+  -x, --extract         extract the SARC
+  -c, --create          create a SARC
+  -t, --list            list contents
+  -l, --little-endian   use little endian encoding when creating an archive (default)
+  -b, --big-endian      use big endian encoding when creating an archive
+  -f ARCHIVE, --archive ARCHIVE
+                        the SARC filename
+  -D DIRECTORY, --directory DIRECTORY
+                        directory to extract the files to
+```
+
+### Examples
+
+Extracts a ZLIB-compressed SARC file, ntrSyncro_long.zlib, into a directory named layout
+```
+python sarc3.py -xzf ntrSyncro_long.zlib -D toEdit
+```
+
+Creates a ZLIB-compressed SARC file called ntrSyncro_arrange.zlib 
+```
